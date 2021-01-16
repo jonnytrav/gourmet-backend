@@ -7,12 +7,12 @@ const User = require("../models/User");
 // get all users
 router.get("/", async (req, res) => {
   try {
-    console.log("Fetching users...");
+    // console.log("Fetching all users...");
     const users = await User.find();
     res.status(200).json(users);
   } catch (err) {
     console.log(err);
-    res.status(500).json({ message: err.message });
+    res.status(500).json({ message: err.message, "WHERE?": "ROUTER.GET/" });
   }
 });
 
